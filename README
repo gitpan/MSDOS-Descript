@@ -1,5 +1,5 @@
-MSDOS::Descript 1.001
-Copyright 1997 Christopher J. Madsen
+MSDOS::Descript 1.02
+Copyright 2007 Christopher J. Madsen
 
 DESCRIPTION
 
@@ -16,8 +16,10 @@ REQUIREMENTS
     files modified by MSDOS::Descript will no longer be hidden files.
     This means that they will show up in directory listings.
 
-    Both these modules are available on CPAN in the "authors/id/CJM"
-    directory.
+    Both these modules are available on CPAN:
+
+        http://search.cpan.org/~cjm/Tie-CPHash/
+        http://search.cpan.org/~cjm/MSDOS-Attrib/
 
 LICENSE
 

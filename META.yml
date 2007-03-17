@@ -1,0 +1,26 @@
+---
+name: MSDOS-Descript
+version: 1.02
+author:
+  - Christopher J. Madsen <perl@cjmweb.net>
+abstract: Manage 4DOS style DESCRIPT.ION files
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Tie::CPHash: 1
+build_requires:
+  FindBin: 0
+  Module::Build: 0.21
+  Test::More: 0
+recommends:
+  MSDOS::Attrib: 1
+dynamic_config: 0
+provides:
+  MSDOS::Descript:
+    file: lib/MSDOS/Descript.pm
+    version: 1.02
+generated_by: Module::Build version 0.2805
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
