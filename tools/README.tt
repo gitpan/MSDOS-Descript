@@ -1,4 +1,6 @@
-MSDOS::Descript version 1.03, released May 4, 2008
+[% # $Id: README.tt 2005 2008-05-05 00:51:36Z cjm $ %]
+MSDOS::Descript version [%version%], released [%date%]
+
 Copyright 1997-2008 Christopher J. Madsen
 
 DESCRIPTION
@@ -31,12 +33,10 @@ DEPENDENCIES
         http://search.cpan.org/~cjm/MSDOS-Attrib/
 
 CHANGES
-    Here's what's new in version 1.03 of Module::Build::DistVersion:
+    Here's what's new in version [%version%] of Module::Build::DistVersion:
     (See the file "Changes" for the full revision history.)
 
-	- no functional changes
-	- minor clean up to documentation
-	- use Module::Build::DistVersion for packaging
+[%changes%]
 
 LICENSE
 
