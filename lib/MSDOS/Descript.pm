@@ -5,7 +5,6 @@ package MSDOS::Descript;
 #
 # Author: Christopher J. Madsen <perl@cjmweb.net>
 # Created: 09 Nov 1997
-# $Id: Descript.pm 2005 2008-05-05 00:51:36Z cjm $
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the same terms as Perl itself.
@@ -15,10 +14,10 @@ package MSDOS::Descript;
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See either the
 # GNU General Public License or the Artistic License for more details.
 #
-# Manage 4DOS DESCRIPT.ION files
+# ABSTRACT: Manage 4DOS style DESCRIPT.ION files
 #---------------------------------------------------------------------
 
-require 5.000;
+require 5.006;
 use strict;
 use warnings;
 use Carp qw(croak);
@@ -30,11 +29,12 @@ use vars qw($VERSION $hide_descriptions);
 
 BEGIN
 {
-    $VERSION = '1.03';
+    $VERSION = '1.04';
 
+    # RECOMMEND PREREQ: MSDOS::Attrib
     # Try to load MSDOS::Attrib, but keep going without it:
-    eval { require MSDOS::Attrib };
-    $hide_descriptions = 1 unless $@;
+    $hide_descriptions = do { local $@; eval { require MSDOS::Attrib; 1 } };
+
     MSDOS::Attrib->import('set_attribs') if $hide_descriptions;
 } # end BEGIN
 
@@ -198,8 +198,8 @@ MSDOS::Descript - Manage 4DOS style DESCRIPT.ION files
 
 =head1 VERSION
 
-This document describes version 1.03 of MSDOS::Descript, released May 4, 2008.
-
+This document describes version 1.04 of
+MSDOS::Descript, released March 26, 2012.
 
 =head1 SYNOPSIS
 
@@ -290,11 +290,9 @@ use absolute paths if you're going to use C<autoupdate>.
 
 =back
 
-
 =head1 CONFIGURATION AND ENVIRONMENT
 
 MSDOS::Descript requires no configuration files or environment variables.
-
 
 =head1 DEPENDENCIES
 
@@ -308,11 +306,9 @@ visible.
 
 Both L<Tie::CPHash> and L<MSDOS::Attrib> are available from CPAN.
 
-
 =head1 INCOMPATIBILITIES
 
 None reported.
-
 
 =head1 BUGS AND LIMITATIONS
 
@@ -325,24 +321,24 @@ description but C<$old> did not, C<$new>'s description is preserved
 feature, so I'm leaving it alone for now.  This behavior may change in
 the future.
 
-
 =head1 AUTHOR
 
-Christopher J. Madsen  S<< C<< <perl AT cjmweb.net> >> >>
+Christopher J. Madsen  S<C<< <perl AT cjmweb.net> >>>
 
-Please report any bugs or feature requests to
-S<< C<< <bug-MSDOS-Descript AT rt.cpan.org> >> >>,
+Please report any bugs or feature requests
+to S<C<< <bug-MSDOS-Descript AT rt.cpan.org> >>>
 or through the web interface at
-L<http://rt.cpan.org/Public/Bug/Report.html?Queue=MSDOS-Descript>
+L<< http://rt.cpan.org/Public/Bug/Report.html?Queue=MSDOS-Descript >>.
 
+You can follow or contribute to MSDOS-Descript's development at
+L<< http://github.com/madsen/msdos-descript >>.
 
-=head1 LICENSE AND COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright 1997-2008 Christopher J. Madsen
+This software is copyright (c) 2012 by Christopher J. Madsen.
 
-This module is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself. See L<perlartistic>.
-
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =head1 DISCLAIMER OF WARRANTY
 
@@ -358,7 +354,7 @@ NECESSARY SERVICING, REPAIR, OR CORRECTION.
 
 IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
 WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
-REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE
+REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENSE, BE
 LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL,
 OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE
 THE SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING

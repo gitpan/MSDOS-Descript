@@ -1,39 +1,41 @@
-#! /usr/bin/perl
-#---------------------------------------------------------------------
-# $Id: Build.PL 2005 2008-05-05 00:51:36Z cjm $
-# Copyright 2007 Christopher J. Madsen
-#
-# Build.PL for MSDOS-Descript
-#---------------------------------------------------------------------
 
 use strict;
 use warnings;
 
-# Make sure we're using My_Build from our distribution:
-use FindBin;
-use lib "$FindBin::Bin/tools";
+use Module::Build 0.2808;
+use lib 'inc'; use My_Build;
 
-use My_Build;          # Our customized version of Module::Build
-
-my $builder = My_Build->new(
-  module_name        => 'MSDOS::Descript',
-  license            => 'perl',
-  dist_author        => 'Christopher J. Madsen <perl@cjmweb.net>',
-  requires => {
-      'perl'        => '5.006',
-      'Tie::CPHash' => 1,
+my %module_build_args = (
+  "build_requires" => {
+    "FindBin" => 0,
+    "Module::Build" => "0.2808",
+    "Test::More" => 0
   },
-  recommends => {
-      'MSDOS::Attrib' => 1,
+  "configure_requires" => {
+    "Module::Build" => "0.2808"
   },
-  build_requires => {
-      'FindBin'       => 0,
-      'Module::Build' => 0.21,
-      'Test::More'    => 0,
+  "dist_abstract" => "Manage 4DOS style DESCRIPT.ION files",
+  "dist_author" => [
+    "Christopher J. Madsen <perl\@cjmweb.net>"
+  ],
+  "dist_name" => "MSDOS-Descript",
+  "dist_version" => "1.04",
+  "license" => "perl",
+  "module_name" => "MSDOS::Descript",
+  "recommends" => {
+    "MSDOS::Attrib" => 0
   },
-  create_makefile_pl => 'passthrough',
-  dynamic_config     => 0,
-  meta_merge         => { no_index  => { directory => [ 'tools' ] }},
+  "recursive_test_files" => 1,
+  "requires" => {
+    "Carp" => 0,
+    "Tie::CPHash" => 0,
+    "perl" => "5.006",
+    "vars" => 0
+  },
+  "script_files" => []
 );
 
-$builder->create_build_script();
+
+my $build = My_Build->new(%module_build_args);
+
+$build->create_build_script;

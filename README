@@ -1,21 +1,30 @@
-MSDOS::Descript version 1.03, released May 4, 2008
-Copyright 1997-2008 Christopher J. Madsen
+MSDOS::Descript version 1.04, released March 26, 2012
 
-DESCRIPTION
 
-    This module provides access to 4DOS style DESCRIPT.ION files.
-    It can both read and write them.
+This module provides access to 4DOS style DESCRIPT.ION files.
+It can both read and write them.
+
+
 
 INSTALLATION
 
-    To install this module, run the following commands:
+To install this module, run the following commands:
 
 	perl Build.PL
 	./Build
 	./Build test
 	./Build install
 
+
+
 DEPENDENCIES
+
+  Package      Minimum Version
+  ------------ ---------------
+  perl          5.006
+  Carp          
+  Tie::CPHash   
+  vars
 
     You must have the Tie::CPHash module (a case-insensitive hash).
 
@@ -27,23 +36,24 @@ DEPENDENCIES
 
     Both these modules are available on CPAN:
 
-        http://search.cpan.org/~cjm/Tie-CPHash/
-        http://search.cpan.org/~cjm/MSDOS-Attrib/
+        http://search.cpan.org/dist/Tie-CPHash/
+        http://search.cpan.org/dist/MSDOS-Attrib/
+
+
 
 CHANGES
-    Here's what's new in version 1.03 of Module::Build::DistVersion:
+    Here's what's new in version 1.04 of MSDOS::Descript:
     (See the file "Changes" for the full revision history.)
 
-	- no functional changes
-	- minor clean up to documentation
-	- use Module::Build::DistVersion for packaging
+	- localize $@ before eval
+	- now built with Dist::Zilla (includes v2 META.json)
+	- repository now publicly available on GitHub
 
-LICENSE
 
-    This program is free software; you can redistribute it and/or modify
-    it under the same terms as Perl itself.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See either the
-    GNU General Public License or the Artistic License for more details.
+COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Christopher J. Madsen.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
