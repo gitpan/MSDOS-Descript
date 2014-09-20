@@ -29,7 +29,7 @@ use vars qw($VERSION $hide_descriptions);
 
 BEGIN
 {
-    $VERSION = '1.04';
+    $VERSION = '1.05';
 
     # RECOMMEND PREREQ: MSDOS::Attrib
     # Try to load MSDOS::Attrib, but keep going without it:
@@ -198,8 +198,8 @@ MSDOS::Descript - Manage 4DOS style DESCRIPT.ION files
 
 =head1 VERSION
 
-This document describes version 1.04 of
-MSDOS::Descript, released March 26, 2012.
+This document describes version 1.05 of
+MSDOS::Descript, released September 20, 2014.
 
 =head1 SYNOPSIS
 
@@ -306,6 +306,12 @@ visible.
 
 Both L<Tie::CPHash> and L<MSDOS::Attrib> are available from CPAN.
 
+=head1 SEE ALSO
+
+JP Software (L<http://jpsoft.com>), makers of 4DOS, 4NT, and Take Command.
+These alternate shells for DOS & Windows originated (and can still use)
+the DESCRIPT.ION file format.
+
 =head1 INCOMPATIBILITIES
 
 None reported.
@@ -331,11 +337,11 @@ or through the web interface at
 L<< http://rt.cpan.org/Public/Bug/Report.html?Queue=MSDOS-Descript >>.
 
 You can follow or contribute to MSDOS-Descript's development at
-L<< http://github.com/madsen/msdos-descript >>.
+L<< https://github.com/madsen/msdos-descript >>.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Christopher J. Madsen.
+This software is copyright (c) 2014 by Christopher J. Madsen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

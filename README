@@ -1,4 +1,4 @@
-MSDOS::Descript version 1.04, released March 26, 2012
+MSDOS::Descript version 1.05, released September 20, 2014
 
 
 This module provides access to 4DOS style DESCRIPT.ION files.
@@ -21,7 +21,7 @@ DEPENDENCIES
 
   Package      Minimum Version
   ------------ ---------------
-  perl          5.006
+  perl          5.6.0
   Carp          
   Tie::CPHash   
   vars
@@ -42,18 +42,17 @@ DEPENDENCIES
 
 
 CHANGES
-    Here's what's new in version 1.04 of MSDOS::Descript:
+    Here's what's new in version 1.05 of MSDOS::Descript:
     (See the file "Changes" for the full revision history.)
 
-	- localize $@ before eval
-	- now built with Dist::Zilla (includes v2 META.json)
-	- repository now publicly available on GitHub
+	- mention JP Software in documentation
+	- release tests moved to xt/
 
 
 
 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Christopher J. Madsen.
+This software is copyright (c) 2014 by Christopher J. Madsen.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
